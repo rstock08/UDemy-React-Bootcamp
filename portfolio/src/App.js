@@ -16,41 +16,49 @@ class App extends Component{
 
     constructor(){
         super();
-        this.state = { displayBio: false };
+        this.state = { displayBio: false};
 
         console.log('Component this', this);
 
-        this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
+        //this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
+        //this.readMore = this.readMore(this);
+        //this.readLess = this.readLess(this);
     }
 
-    toggleDisplayBio(){
-        this.setState({ displayBio: !this.state.displayBio });
+    //toggleDisplayBio(){
+    //    this.setState({ displayBio: !this.state.displayBio });
+    //}
+
+    readMore(){
+        this.setState({ displayBio: true });
+    }
+
+    readLess(){
+        this.setState({ displayBio: false });
     }
 
     render() {
-        // Ternary statement if this.state.displayBio = true it will be set to everything inside the parenthesis
-        // Else if this.state.displayBio = false it will set it to whats after the colon
-        let bio = this.state.displayBio ? (
-            <div>
-                <p>I live in San Diego, and code every day.</p>
-                <p>My favorite language is Javascript, and I think React.js is awesome.</p>
-                <p>Besides coding, I also love music and ramen!</p>
-                <button onClick={this.toggleDisplayBio()}>Read less...</button>
-            </div>
-        ) : (
-            <div>
-                <button onClick={this.toggleDisplayBio()}>Read more...</button>
-            </div>
-        )
-
         return (
             <div>
                 <h1>Hello!</h1>
                 <p>My name is Reed. I'm a Software Engineer.</p>
                 <p>I'm always looking forward to working on meaningful projects.</p>
+                {
+                    // Ternary statement if this.state.displayBio = true it will be set to everything inside the parenthesis
+                    // Else if this.state.displayBio = false it will set it to whats after the colon
+                    this.state.displayBio ? (
+                        <div>
+                            <p>I live in San Diego, and code every day.</p>
+                            <p>My favorite language is Javascript, and I think React.js is awesome.</p>
+                            <p>Besides coding, I also love music and ramen!</p>
 
-                {bio}
-
+                        </div>
+                    ) : (
+                        <div>
+                            <button onClick={this.readMore()}>Read more...</button>
+                        </div>
+                    )
+                }
             </div>
         )
     }
