@@ -14,28 +14,25 @@ console.log('regularClassInstance', regularClassInstance);
 // Creating a class called App which uses Component
 class App extends Component{
 
+    state = { displayBio: false };
+
+    toggleDisplayBio = () => {
+        this.setState({ displayBio: !this.state.displayBio });
+    }
+
+    /*
     constructor(){
         super();
         this.state = { displayBio: false};
 
         console.log('Component this', this);
 
-        //this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
-        //this.readMore = this.readMore(this);
-        //this.readLess = this.readLess(this);
+        this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
     }
 
-    //toggleDisplayBio(){
-    //    this.setState({ displayBio: !this.state.displayBio });
-    //}
-
-    readMore(){
-        this.setState({ displayBio: true });
-    }
-
-    readLess(){
-        this.setState({ displayBio: false });
-    }
+    toggleDisplayBio(){
+        this.setState({ displayBio: !this.state.displayBio });
+    }*/
 
     render() {
         return (
@@ -51,12 +48,10 @@ class App extends Component{
                             <p>I live in San Diego, and code every day.</p>
                             <p>My favorite language is Javascript, and I think React.js is awesome.</p>
                             <p>Besides coding, I also love music and ramen!</p>
-
+                            <button onClick={this.toggleDisplayBio}>Read Less...</button>
                         </div>
                     ) : (
-                        <div>
-                            <button onClick={this.readMore()}>Read more...</button>
-                        </div>
+                        <button onClick={this.toggleDisplayBio}>Read More...</button>
                     )
                 }
             </div>
