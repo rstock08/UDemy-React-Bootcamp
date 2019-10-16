@@ -1,5 +1,8 @@
 // Import react and the component classes
 import React, { Component } from 'react';
+import Projects from './Projects';
+import SocialProfiles from "./SocialProfiles";
+import profile from './assets/profile.png';
 
 // See the difference between a regular class and one that extends component
 class RegularClass {}
@@ -37,6 +40,7 @@ class App extends Component{
     render() {
         return (
             <div>
+                <img src={profile} alt='profile image' className="profile-image"/>
                 <h1>Hello!</h1>
                 <p>My name is Reed. I'm a Software Engineer.</p>
                 <p>I'm always looking forward to working on meaningful projects.</p>
@@ -54,6 +58,9 @@ class App extends Component{
                         <button onClick={this.toggleDisplayBio}>Read More...</button>
                     )
                 }
+                <hr />
+                <Projects />
+                <SocialProfiles />
             </div>
         )
     }
