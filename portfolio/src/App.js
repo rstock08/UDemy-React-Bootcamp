@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Projects from './Projects';
 import SocialProfiles from "./SocialProfiles";
+import Title from "./Title";
 import profile from './assets/profile.png';
 
 // See the difference between a regular class and one that extends component
@@ -42,7 +43,8 @@ class App extends Component{
             <div>
                 <img src={profile} alt='profile image' className="profile-image"/>
                 <h1>Hello!</h1>
-                <p>My name is Reed. I'm a Software Engineer.</p>
+                <p>My name is Reed.</p>
+                <Title />
                 <p>I'm always looking forward to working on meaningful projects.</p>
                 {
                     // Ternary statement if this.state.displayBio = true it will be set to everything inside the parenthesis
