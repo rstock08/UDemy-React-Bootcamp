@@ -4,7 +4,8 @@
 <b>Lecturer:</b> David Joseph Katz
 
 <b>Objective:</b><br>
-Learn how to develop using massively popular React JS javascript framework/library.
+Learn how to develop using massively popular React JS javascript framework/library. 
+Better understand the inner workings of React.
 
 <b>Technologies:</b>
    - React.js
